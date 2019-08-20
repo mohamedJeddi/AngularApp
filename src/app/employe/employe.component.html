@@ -1,0 +1,32 @@
+
+<button class="btn btn-primary" (click)="createEmp()">New Employe</button>
+<br>
+<br>
+<table class="table table-striped" *ngIf="!loading">
+  <thead>
+      <th>Id</th>
+      <th>Nom</th>
+      <th>Preom</th>
+      <th>Email</th>
+      <th>isActif</th>
+      <th>Contrat-Type</th>
+      <th>Role</th>
+      <th>Action</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let e of listEmp">
+    <td>{{e.id}}</td>
+    <td>{{e.nom}}</td>
+    <td>{{e.prenom}}</td>
+    <td>{{e.email}}</td>
+    <td>{{e.isActif}}</td>
+    <td>{{e.contrat}}</td>
+    <td>{{e.roles}}</td>
+    <td>
+      <button class="btn btn-danger" (click)="delete(e)">Delete</button>
+      <button class="btn btn-primary" (click)="update(e)">Update</button>
+    </td>
+<!--    <td *ngFor="let rol of listRole">{{rol.nom}}</td>-->
+  </tr>
+  </tbody>
+</table>

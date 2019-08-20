@@ -1,0 +1,13 @@
+<div class="col-auto">
+<form (ngSubmit)="processForm()" #roleForm="ngForm">
+    <div class="form-group">
+      <label for="nom">Nom</label>
+      <input type="text" id="nom" class="form-control" [(ngModel)]="role.nom" name="role.nom" required="" #name="ngModel" placeholder="name">
+      <div  *ngIf="name.invalid || name.value == null" class="alert alert-danger">
+        Name is required
+      </div>
+    </div>
+
+    <input type="submit" class="btn btn-success" value="save" [disabled]="roleForm.invalid">
+</form>
+</div>

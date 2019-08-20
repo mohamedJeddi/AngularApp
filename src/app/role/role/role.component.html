@@ -1,0 +1,27 @@
+<div class="col-md-6">
+<br>
+<input type="text" [(ngModel)]="nom" (input)="Search()" class="input-group-text" placeholder="search">
+<br>
+<br>
+<button class="btn btn-primary" (click)="addNewRole()" >New Role</button>
+
+<br>
+
+<table class="table table-striped">
+  <thead>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Operations</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let r of listRoles">
+    <td>{{r.id}}</td>
+    <td>{{r.nom}}</td>
+    <td>
+      <button class="btn btn-danger" (click)="deleteRole(r)"  >Delete</button>
+      <button class="btn btn-info" (click)="updateRole(r)">Edit</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</div>

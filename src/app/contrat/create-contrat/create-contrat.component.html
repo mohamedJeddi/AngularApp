@@ -1,0 +1,19 @@
+<form (ngSubmit)="processForm()" #contratForm="ngForm">
+  <div class="form-group">
+    <label for="nom">TypdeContrat</label>
+    <input type="text" id="nom" class="form-control" [(ngModel)]="contrat.typdeContrat" name="typeContrat" required #typeContrat="ngModel" placeholder="TypeContrat">
+    <div *ngIf="typeContrat.invalid" class="alert alert-danger">
+      TypdeContrat is required
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="nom">Salaire</label>
+    <input type="number" id="salaire" class="form-control" [(ngModel)]="contrat.salaire" name="salaire" required #salaire="ngModel" placeholder="Salaire">
+    <div *ngIf="salaire.value == null" class="alert alert-danger">
+      Salaire is required
+    </div>
+  </div>
+
+  <input type="submit" class="btn btn-success" value="save" [disabled]="contratForm.invalid">
+</form>

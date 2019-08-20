@@ -1,0 +1,62 @@
+<div class="container">
+
+<div class="col-md-6" >
+
+<form (ngSubmit)="processForm()" #EmployeForm="ngForm" >
+  <div class="form-group">
+    <label for="nom">Nom</label>
+    <input type="text" id="nom" class="form-control" [(ngModel)]="employe.nom" name="nom" required #nom="ngModel"
+           placeholder="Nom">
+    <div *ngIf="nom.invalid" class="alert alert-danger">
+      Nom is required
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="prenom">Preom</label>
+    <input type="text" id="prenom" class="form-control" [(ngModel)]="employe.prenom" name="prenom" required #prenom="ngModel"
+           placeholder="Nom">
+    <div *ngIf="prenom.invalid" class="alert alert-danger">
+      Prenom is required
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" id="email" class="form-control" [(ngModel)]="employe.email" name="email" required #email="ngModel"
+           placeholder="Email">
+    <div *ngIf="email.invalid" class="alert alert-danger">
+      Email is required
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="isActif">IsActif</label>
+    <input type="checkbox" id="isActif" class="form-control" [(ngModel)]="employe.isActif" name="isActif" required #isActif="ngModel"
+           placeholder="IsActif">
+  </div>
+  <div class="form-group">
+    <label for="contrat">Contrat</label>
+    <select class="form-control" [(ngModel)]="selectedContrat" name="contrat" required  id="contrat">
+      <option></option>
+      <option *ngFor="let c of listContrat" value={{c.id}}>
+        {{c.typdeContrat}}
+      </option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="role">Role</label>
+    <select id="role" class="form-control" [(ngModel)]="selestedRoles" name="role" required #role="ngModel">
+      <option></option>
+      <option *ngFor="let r of listRole" value={{r.id}}>
+        {{r.nom}}
+      </option>
+    </select>
+<!--    <div *ngIf="role.invalid" class="alert alert-danger">-->
+<!--      Role is required-->
+<!--    </div>-->
+  </div>
+
+  <input type="submit" class="btn btn-success" value="save" [disabled]="EmployeForm.invalid">
+
+</form>
+
+</div>
+</div>

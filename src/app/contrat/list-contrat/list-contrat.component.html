@@ -1,0 +1,21 @@
+<div class="col-md-7">
+<button (click)="addNewContrat()" class="btn btn-primary">New Contrat</button> <br>
+
+<table class="table table-striped">
+  <thead>
+    <th>TypdeContrat</th>
+    <th>Salaire</th>
+    <th>Actions</th>
+  </thead>
+  <tbody>
+  <tr *ngFor="let c of listContrat">
+    <td>{{c.typdeContrat}}</td>
+    <td>{{c.salaire}}</td>
+    <td>
+      <button (click)="deleteContrat(c)" class="btn btn-danger">Delete</button>
+      <button (click)="updateContrat(c)" class="btn btn-info">Update</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</div>
