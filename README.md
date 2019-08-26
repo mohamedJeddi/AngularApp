@@ -1,6 +1,6 @@
 # AngularApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.0 and interacts with the BackEnd part (which is developed using Spring Framework) using the Http module
 
 ## Development server
 
